@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="lecrm-aftersales-context" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin" />
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/xueplus?characterEncoding=utf8"
+                        userId="root" password="asdf1234">
+        </jdbcConnection>
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <javaModelGenerator targetPackage="net.xueplus.message.model"
+                            targetProject="/Volumes/Data/code/xueplus/xueplus-member/member-api/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="mapper"
+                         targetProject="/Volumes/Data/code/xueplus/xueplus-member/member-impl/src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <javaClientGenerator type="XMLMAPPER" targetPackage="net.xueplus.message.client"
+                             targetProject="/Volumes/Data/code/xueplus/xueplus-member/member-impl/src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!--<table tableName="t_member" domainObjectName="Member"
+               enableCountByExample="true" enableDeleteByExample="true" enableDeleteByPrimaryKey="true"
+               enableInsert="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="false" enableUpdateByPrimaryKey="true">
+            <generatedKey column="member_id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="t_member_info" domainObjectName="MemberInfo"
+               enableCountByExample="true" enableDeleteByExample="true" enableDeleteByPrimaryKey="true"
+               enableInsert="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="false" enableUpdateByPrimaryKey="true">
+        </table>-->
+        <table tableName="t_reset_password" domainObjectName="ResetPassword"
+               enableCountByExample="true" enableDeleteByExample="true" enableDeleteByPrimaryKey="true"
+               enableInsert="true" enableSelectByExample="true" enableSelectByPrimaryKey="true"
+               enableUpdateByExample="false" enableUpdateByPrimaryKey="true">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
